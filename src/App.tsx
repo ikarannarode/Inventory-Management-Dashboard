@@ -2,6 +2,7 @@ import React from 'react';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import AuthContainer from './components/Auth/AuthContainer';
 import Dashboard from './components/Dashboard/Dashboard';
+import {Toaster}  from "react-hot-toast";
 
 const AppContent: React.FC = () => {
   const { user, loading } = useAuth();
@@ -23,6 +24,7 @@ const AppContent: React.FC = () => {
 function App() {
   return (
     <AuthProvider>
+<Toaster>
       <AppContent />
     </AuthProvider>
   );
